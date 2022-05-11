@@ -1,0 +1,274 @@
+2022-05-11 00:40:05.989 | INFO     | yolox.core.trainer:before_train:130 - args: Namespace(batch_size=32, cache=False, ckpt=None, devices=1, dist_backend='nccl', dist_url=None, exp_file='exps/example/custom/yolox_s.py', experiment_name='yolox_s', fp16=True, logger='tensorboard', machine_rank=0, name=None, num_machines=1, occupy=True, opts=[], resume=False, start_epoch=None)
+2022-05-11 00:40:05.992 | INFO     | yolox.core.trainer:before_train:131 - exp value:
+╒═══════════════════╤═══════════════════════════════════════╕
+│ keys              │ values                                │
+╞═══════════════════╪═══════════════════════════════════════╡
+│ seed              │ None                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ output_dir        │ './YOLOX_outputs'                     │
+├───────────────────┼───────────────────────────────────────┤
+│ print_interval    │ 10                                    │
+├───────────────────┼───────────────────────────────────────┤
+│ eval_interval     │ 1                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ num_classes       │ 1                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ depth             │ 0.33                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ width             │ 0.5                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ act               │ 'silu'                                │
+├───────────────────┼───────────────────────────────────────┤
+│ data_num_workers  │ 4                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ input_size        │ (640, 640)                            │
+├───────────────────┼───────────────────────────────────────┤
+│ multiscale_range  │ 5                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ data_dir          │ 'datasets/cereal_detector'            │
+├───────────────────┼───────────────────────────────────────┤
+│ train_ann         │ 'datasets/cereal_detector/train'      │
+├───────────────────┼───────────────────────────────────────┤
+│ val_ann           │ 'datasets/cereal_detector/validation' │
+├───────────────────┼───────────────────────────────────────┤
+│ test_ann          │ 'instances_test2017.json'             │
+├───────────────────┼───────────────────────────────────────┤
+│ mosaic_prob       │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ mixup_prob        │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ hsv_prob          │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ flip_prob         │ 0.5                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ degrees           │ 10.0                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ translate         │ 0.1                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ mosaic_scale      │ (0.1, 2)                              │
+├───────────────────┼───────────────────────────────────────┤
+│ enable_mixup      │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ mixup_scale       │ (0.5, 1.5)                            │
+├───────────────────┼───────────────────────────────────────┤
+│ shear             │ 2.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ warmup_epochs     │ 5                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ max_epoch         │ 5000                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ warmup_lr         │ 0                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ min_lr_ratio      │ 0.05                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ basic_lr_per_img  │ 0.00015625                            │
+├───────────────────┼───────────────────────────────────────┤
+│ scheduler         │ 'yoloxwarmcos'                        │
+├───────────────────┼───────────────────────────────────────┤
+│ no_aug_epochs     │ 15                                    │
+├───────────────────┼───────────────────────────────────────┤
+│ ema               │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ weight_decay      │ 0.0005                                │
+├───────────────────┼───────────────────────────────────────┤
+│ momentum          │ 0.9                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ save_history_ckpt │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ exp_name          │ 'yolox_s'                             │
+├───────────────────┼───────────────────────────────────────┤
+│ test_size         │ (640, 640)                            │
+├───────────────────┼───────────────────────────────────────┤
+│ test_conf         │ 0.01                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ nmsthre           │ 0.65                                  │
+╘═══════════════════╧═══════════════════════════════════════╛
+2022-05-11 00:40:06.270 | INFO     | yolox.core.trainer:before_train:136 - Model Summary: Params: 8.94M, Gflops: 26.64
+2022-05-11 00:40:09.451 | INFO     | yolox.data.datasets.coco:__init__:64 - loading annotations into memory...
+2022-05-11 00:40:09.452 | ERROR    | yolox.core.launch:launch:98 - An error has been caught in function 'launch', process 'MainProcess' (9170), thread 'MainThread' (140343993108288):
+Traceback (most recent call last):
+
+  File "tools/train.py", line 133, in <module>
+    launch(
+    └ <function launch at 0x7fa3f6ae8310>
+
+> File "/home/gabriel_sousa/YOLOX/yolox/core/launch.py", line 98, in launch
+    main_func(*args)
+    │          └ (╒═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════...
+    └ <function main at 0x7fa3e988cc10>
+
+  File "tools/train.py", line 117, in main
+    trainer.train()
+    │       └ <function Trainer.train at 0x7fa3e8d7bdc0>
+    └ <yolox.core.trainer.Trainer object at 0x7fa3e8d8a0a0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/core/trainer.py", line 74, in train
+    self.before_train()
+    │    └ <function Trainer.before_train at 0x7fa3e8d81670>
+    └ <yolox.core.trainer.Trainer object at 0x7fa3e8d8a0a0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/core/trainer.py", line 149, in before_train
+    self.train_loader = self.exp.get_data_loader(
+    │                   │    │   └ <function Exp.get_data_loader at 0x7fa3e8d7bf70>
+    │                   │    └ ╒═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════════...
+    │                   └ <yolox.core.trainer.Trainer object at 0x7fa3e8d8a0a0>
+    └ <yolox.core.trainer.Trainer object at 0x7fa3e8d8a0a0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/exp/yolox_base.py", line 143, in get_data_loader
+    dataset = COCODataset(
+              └ <class 'yolox.data.datasets.coco.COCODataset'>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/data/datasets/coco.py", line 64, in __init__
+    self.coco = COCO(os.path.join(self.data_dir, "annotations", self.json_file))
+    │           │    │  │    │    │    │                        │    └ 'datasets/cereal_detector/train'
+    │           │    │  │    │    │    │                        └ <yolox.data.datasets.coco.COCODataset object at 0x7fa3e0c74880>
+    │           │    │  │    │    │    └ 'datasets/cereal_detector'
+    │           │    │  │    │    └ <yolox.data.datasets.coco.COCODataset object at 0x7fa3e0c74880>
+    │           │    │  │    └ <function join at 0x7fa461996550>
+    │           │    │  └ <module 'posixpath' from '/usr/lib/python3.8/posixpath.py'>
+    │           │    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+    │           └ <class 'pycocotools.coco.COCO'>
+    └ <yolox.data.datasets.coco.COCODataset object at 0x7fa3e0c74880>
+
+  File "/home/gabriel_sousa/.local/lib/python3.8/site-packages/pycocotools/coco.py", line 81, in __init__
+    with open(annotation_file, 'r') as f:
+              └ 'datasets/cereal_detector/annotations/datasets/cereal_detector/train'
+
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/cereal_detector/annotations/datasets/cereal_detector/train'
+2022-05-11 00:49:22.268 | INFO     | yolox.core.trainer:before_train:130 - args: Namespace(batch_size=32, cache=False, ckpt=None, devices=1, dist_backend='nccl', dist_url=None, exp_file='exps/example/custom/yolox_s.py', experiment_name='yolox_s', fp16=True, logger='tensorboard', machine_rank=0, name=None, num_machines=1, occupy=True, opts=[], resume=False, start_epoch=None)
+2022-05-11 00:49:22.271 | INFO     | yolox.core.trainer:before_train:131 - exp value:
+╒═══════════════════╤═══════════════════════════════════════╕
+│ keys              │ values                                │
+╞═══════════════════╪═══════════════════════════════════════╡
+│ seed              │ None                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ output_dir        │ './YOLOX_outputs'                     │
+├───────────────────┼───────────────────────────────────────┤
+│ print_interval    │ 10                                    │
+├───────────────────┼───────────────────────────────────────┤
+│ eval_interval     │ 1                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ num_classes       │ 1                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ depth             │ 0.33                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ width             │ 0.5                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ act               │ 'silu'                                │
+├───────────────────┼───────────────────────────────────────┤
+│ data_num_workers  │ 4                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ input_size        │ (3000, 4000)                          │
+├───────────────────┼───────────────────────────────────────┤
+│ multiscale_range  │ 0                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ data_dir          │ 'datasets/cereal_detector'            │
+├───────────────────┼───────────────────────────────────────┤
+│ train_ann         │ 'datasets/cereal_detector/train'      │
+├───────────────────┼───────────────────────────────────────┤
+│ val_ann           │ 'datasets/cereal_detector/validation' │
+├───────────────────┼───────────────────────────────────────┤
+│ test_ann          │ 'datasets/cereal_detector/test'       │
+├───────────────────┼───────────────────────────────────────┤
+│ mosaic_prob       │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ mixup_prob        │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ hsv_prob          │ 1.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ flip_prob         │ 0.5                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ degrees           │ 10.0                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ translate         │ 0.1                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ mosaic_scale      │ (0.1, 2)                              │
+├───────────────────┼───────────────────────────────────────┤
+│ enable_mixup      │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ mixup_scale       │ (0.5, 1.5)                            │
+├───────────────────┼───────────────────────────────────────┤
+│ shear             │ 2.0                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ warmup_epochs     │ 5                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ max_epoch         │ 5000                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ warmup_lr         │ 0                                     │
+├───────────────────┼───────────────────────────────────────┤
+│ min_lr_ratio      │ 0.05                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ basic_lr_per_img  │ 0.00015625                            │
+├───────────────────┼───────────────────────────────────────┤
+│ scheduler         │ 'yoloxwarmcos'                        │
+├───────────────────┼───────────────────────────────────────┤
+│ no_aug_epochs     │ 15                                    │
+├───────────────────┼───────────────────────────────────────┤
+│ ema               │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ weight_decay      │ 0.0005                                │
+├───────────────────┼───────────────────────────────────────┤
+│ momentum          │ 0.9                                   │
+├───────────────────┼───────────────────────────────────────┤
+│ save_history_ckpt │ True                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ exp_name          │ 'yolox_s'                             │
+├───────────────────┼───────────────────────────────────────┤
+│ test_size         │ (640, 640)                            │
+├───────────────────┼───────────────────────────────────────┤
+│ test_conf         │ 0.01                                  │
+├───────────────────┼───────────────────────────────────────┤
+│ nmsthre           │ 0.65                                  │
+╘═══════════════════╧═══════════════════════════════════════╛
+2022-05-11 00:49:22.520 | INFO     | yolox.core.trainer:before_train:136 - Model Summary: Params: 8.94M, Gflops: 26.64
+2022-05-11 00:49:25.693 | INFO     | yolox.data.datasets.coco:__init__:64 - loading annotations into memory...
+2022-05-11 00:49:25.693 | ERROR    | yolox.core.launch:launch:98 - An error has been caught in function 'launch', process 'MainProcess' (9215), thread 'MainThread' (140315040094016):
+Traceback (most recent call last):
+
+  File "tools/train.py", line 133, in <module>
+    launch(
+    └ <function launch at 0x7f9d38fa7310>
+
+> File "/home/gabriel_sousa/YOLOX/yolox/core/launch.py", line 98, in launch
+    main_func(*args)
+    │          └ (╒═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════...
+    └ <function main at 0x7f9d2bccdc10>
+
+  File "tools/train.py", line 117, in main
+    trainer.train()
+    │       └ <function Trainer.train at 0x7f9d2b1bcdc0>
+    └ <yolox.core.trainer.Trainer object at 0x7f9d2b1ca4c0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/core/trainer.py", line 74, in train
+    self.before_train()
+    │    └ <function Trainer.before_train at 0x7f9d2b1c0670>
+    └ <yolox.core.trainer.Trainer object at 0x7f9d2b1ca4c0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/core/trainer.py", line 149, in before_train
+    self.train_loader = self.exp.get_data_loader(
+    │                   │    │   └ <function Exp.get_data_loader at 0x7f9d2b1bcf70>
+    │                   │    └ ╒═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════════...
+    │                   └ <yolox.core.trainer.Trainer object at 0x7f9d2b1ca4c0>
+    └ <yolox.core.trainer.Trainer object at 0x7f9d2b1ca4c0>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/exp/yolox_base.py", line 143, in get_data_loader
+    dataset = COCODataset(
+              └ <class 'yolox.data.datasets.coco.COCODataset'>
+
+  File "/home/gabriel_sousa/YOLOX/yolox/data/datasets/coco.py", line 64, in __init__
+    self.coco = COCO(os.path.join(self.data_dir, "annotations", self.json_file))
+    │           │    │  │    │    │    │                        │    └ 'datasets/cereal_detector/train'
+    │           │    │  │    │    │    │                        └ <yolox.data.datasets.coco.COCODataset object at 0x7f9d4a2170d0>
+    │           │    │  │    │    │    └ 'datasets/cereal_detector'
+    │           │    │  │    │    └ <yolox.data.datasets.coco.COCODataset object at 0x7f9d4a2170d0>
+    │           │    │  │    └ <function join at 0x7f9da3dd7550>
+    │           │    │  └ <module 'posixpath' from '/usr/lib/python3.8/posixpath.py'>
+    │           │    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+    │           └ <class 'pycocotools.coco.COCO'>
+    └ <yolox.data.datasets.coco.COCODataset object at 0x7f9d4a2170d0>
+
+  File "/home/gabriel_sousa/.local/lib/python3.8/site-packages/pycocotools/coco.py", line 81, in __init__
+    with open(annotation_file, 'r') as f:
+              └ 'datasets/cereal_detector/annotations/datasets/cereal_detector/train'
+
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/cereal_detector/annotations/datasets/cereal_detector/train'
