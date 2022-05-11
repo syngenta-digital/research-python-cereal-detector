@@ -37,14 +37,14 @@ class Exp(BaseExp):
         # You can uncomment this line to specify a multiscale range
         # self.random_size = (14, 26)
         # dir of dataset images, if data_dir is None, this project will use `datasets` dir
-        self.data_dir = "datasets/cereal_detector"
+        self.data_dir = "/data/datasets/cereal_detector/COCO_format/img"
         # name of annotation file for training
-        self.train_ann = "datasets/cereal_detector/train"
+        self.train_ann = "/data/datasets/cereal_detector/COCO_format/train.json"
         # name of annotation file for evaluation
-        self.val_ann = "datasets/cereal_detector/validation"
+        self.val_ann = "/data/datasets/cereal_detector/COCO_format/validation.json"
         # name of annotation file for testing
-        self.test_ann = "datasets/cereal_detector/test"
-
+        self.test_ann = "/data/datasets/cereal_detector/COCO_format/test.json"
+        
         # --------------- transform config ----------------- #
         # prob of applying mosaic aug
         self.mosaic_prob = 1.0
