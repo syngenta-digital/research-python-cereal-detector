@@ -9,10 +9,10 @@ import torch
 import torch.distributed as dist
 import torch.nn as nn
 
-from yolox.exp import Exp as MyExp
+#from yolox.exp import Exp as MyExp
 
 
-class Exp(MyExp):
+class Exp():
     def __init__(self):
         super().__init__()
 
